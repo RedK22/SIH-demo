@@ -106,52 +106,52 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
           Sagar Suraksha Monitoring Dashboard
         </h1>
-        <p className="text-gray-600">
+        <p className="text-sm sm:text-base text-gray-600">
           Real-time overview of reported ocean hazards and incidents
         </p>
       </div>
 
       {/* Statistics Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <div className="bg-white rounded-lg shadow-md p-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <BarChart3 className="h-8 w-8 text-blue-600" />
+              <BarChart3 className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />
             </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500">Total Reports</p>
-              <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
+            <div className="ml-3 sm:ml-4">
+              <p className="text-xs sm:text-sm font-medium text-gray-500">Total Reports</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">{stats.total}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <Clock className="h-8 w-8 text-yellow-600" />
+              <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-yellow-600" />
             </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500">Pending</p>
-              <p className="text-2xl font-bold text-gray-900">
+            <div className="ml-3 sm:ml-4">
+              <p className="text-xs sm:text-sm font-medium text-gray-500">Pending</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">
                 {stats.pending}
               </p>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
+        <div className="bg-white rounded-lg shadow-md p-4 sm:p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <CheckCircle className="h-8 w-8 text-green-600" />
+              <CheckCircle className="h-6 w-6 sm:h-8 sm:w-8 text-green-600" />
             </div>
-            <div className="ml-4">
-              <p className="text-sm font-medium text-gray-500">Resolved</p>
-              <p className="text-2xl font-bold text-gray-900">
+            <div className="ml-3 sm:ml-4">
+              <p className="text-xs sm:text-sm font-medium text-gray-500">Resolved</p>
+              <p className="text-xl sm:text-2xl font-bold text-gray-900">
                 {stats.resolved}
               </p>
             </div>
@@ -160,17 +160,17 @@ const Dashboard = () => {
       </div>
 
       {/* Priority Distribution */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+        <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
           Priority Distribution
         </h2>
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-xs sm:text-sm font-medium text-gray-700">
               High Priority
             </span>
             <div className="flex items-center space-x-2">
-              <div className="w-32 bg-gray-200 rounded-full h-2">
+              <div className="w-20 sm:w-32 bg-gray-200 rounded-full h-2">
                 <div
                   className="bg-red-500 h-2 rounded-full"
                   style={{
@@ -180,15 +180,15 @@ const Dashboard = () => {
                   }}
                 ></div>
               </div>
-              <span className="text-sm text-gray-600">{stats.high}</span>
+              <span className="text-xs sm:text-sm text-gray-600 w-6">{stats.high}</span>
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-xs sm:text-sm font-medium text-gray-700">
               Medium Priority
             </span>
             <div className="flex items-center space-x-2">
-              <div className="w-32 bg-gray-200 rounded-full h-2">
+              <div className="w-20 sm:w-32 bg-gray-200 rounded-full h-2">
                 <div
                   className="bg-yellow-500 h-2 rounded-full"
                   style={{
@@ -198,15 +198,15 @@ const Dashboard = () => {
                   }}
                 ></div>
               </div>
-              <span className="text-sm text-gray-600">{stats.medium}</span>
+              <span className="text-xs sm:text-sm text-gray-600 w-6">{stats.medium}</span>
             </div>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-xs sm:text-sm font-medium text-gray-700">
               Low Priority
             </span>
             <div className="flex items-center space-x-2">
-              <div className="w-32 bg-gray-200 rounded-full h-2">
+              <div className="w-20 sm:w-32 bg-gray-200 rounded-full h-2">
                 <div
                   className="bg-green-500 h-2 rounded-full"
                   style={{
@@ -216,33 +216,33 @@ const Dashboard = () => {
                   }}
                 ></div>
               </div>
-              <span className="text-sm text-gray-600">{stats.low}</span>
+              <span className="text-xs sm:text-sm text-gray-600 w-6">{stats.low}</span>
             </div>
           </div>
         </div>
       </div>
 
       {/* Interactive Heatmap */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-bold text-gray-900 mb-4">
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+        <h2 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
           Interactive Incident Map
         </h2>
-        <div className="mb-4 flex items-center space-x-4">
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-green-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">Low Priority</span>
+        <div className="mb-3 sm:mb-4 flex flex-wrap gap-2 sm:gap-4">
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full"></div>
+            <span className="text-xs sm:text-sm text-gray-600">Low Priority</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-yellow-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">Medium Priority</span>
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="w-3 h-3 sm:w-4 sm:h-4 bg-yellow-500 rounded-full"></div>
+            <span className="text-xs sm:text-sm text-gray-600">Medium Priority</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-red-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">High Priority</span>
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="w-3 h-3 sm:w-4 sm:h-4 bg-red-500 rounded-full"></div>
+            <span className="text-xs sm:text-sm text-gray-600">High Priority</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-4 h-4 bg-blue-500 rounded-full"></div>
-            <span className="text-sm text-gray-600">Your Location</span>
+          <div className="flex items-center space-x-1 sm:space-x-2">
+            <div className="w-3 h-3 sm:w-4 sm:h-4 bg-blue-500 rounded-full"></div>
+            <span className="text-xs sm:text-sm text-gray-600">Your Location</span>
           </div>
         </div>
 

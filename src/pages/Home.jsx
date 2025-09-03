@@ -88,11 +88,11 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <div className="mx-auto mb-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
+        <div className="text-center mb-8 sm:mb-16">
+          <div className="mx-auto mb-4 sm:mb-6">
             <svg
-              className="h-20 w-20 mx-auto"
+              className="h-16 w-16 sm:h-20 sm:w-20 mx-auto"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
@@ -116,21 +116,21 @@ const Home = () => {
               />
             </svg>
           </div>
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Sagar Suraksha
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
             Integrated platform for crowdsourced ocean hazard reporting and
             social media analytics. Helping communities stay safe through
             real-time incident reporting and monitoring.
           </p>
 
           {user ? (
-            <div className="space-x-4">
+            <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-3 sm:space-y-0 justify-center">
               {user.role === "citizen" ? (
                 <Link
                   to="/report"
-                  className="inline-flex items-center space-x-2 bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center space-x-2 bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
                 >
                   <AlertTriangle className="h-5 w-5" />
                   <span>Report Incident</span>
@@ -138,7 +138,7 @@ const Home = () => {
               ) : (
                 <Link
                   to="/dashboard"
-                  className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
                 >
                   <BarChart3 className="h-5 w-5" />
                   <span>View Dashboard</span>
@@ -157,45 +157,46 @@ const Home = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        {/* Statistics Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-16">
           {statsToShow.map((stat, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md p-6 text-center"
+              className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-center"
             >
-              <div className="text-3xl font-bold text-blue-600 mb-2">
+              <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-2">
                 {stat.value}
               </div>
-              <div className="text-gray-600">{stat.label}</div>
+              <div className="text-sm sm:text-base text-gray-600">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-16">
           {features.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+                className="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow"
               >
-                <IconComponent className={`h-12 w-12 ${feature.color} mb-4`} />
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <IconComponent className={`h-10 w-10 sm:h-12 sm:w-12 ${feature.color} mb-3 sm:mb-4`} />
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <p className="text-sm sm:text-base text-gray-600">{feature.description}</p>
               </div>
             );
           })}
         </div>
 
         {/* Call to Action */}
-        <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
             Ready to Make a Difference?
           </h2>
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-4">
             Join thousands of citizens, officials, and analysts working together
             to protect our oceans.
           </p>

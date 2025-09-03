@@ -119,11 +119,11 @@ const ReportForm = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8">
-      <div className="bg-white rounded-lg shadow-lg p-6">
-        <div className="flex items-center space-x-3 mb-6">
-          <AlertTriangle className="h-8 w-8 text-red-500" />
-          <h1 className="text-2xl font-bold text-gray-900">
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+      <div className="bg-white rounded-lg shadow-lg p-4 sm:p-6">
+        <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+          <AlertTriangle className="h-6 w-6 sm:h-8 sm:w-8 text-red-500" />
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
             Submit Hazard Report
           </h1>
         </div>
@@ -296,11 +296,11 @@ const ReportForm = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="flex justify-end">
+          <div className="flex justify-center sm:justify-end">
             <button
               type="submit"
               disabled={isSubmitting || !formData.title.trim()}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-md font-medium transition-colors ${
+              className={`flex items-center justify-center space-x-2 w-full sm:w-auto px-6 py-3 rounded-md font-medium transition-colors ${
                 isSubmitting || !formData.title.trim()
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-red-600 hover:bg-red-700 text-white"

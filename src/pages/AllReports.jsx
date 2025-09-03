@@ -111,63 +111,65 @@ const AllReports = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8">
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">
           All Hazard Reports
         </h1>
-        <p className="text-gray-600">
+        <p className="text-sm sm:text-base text-gray-600">
           Manage and review all submitted hazard reports
         </p>
       </div>
 
       {/* Filters */}
-      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-        <div className="flex flex-wrap gap-4 items-center">
+      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-4 sm:mb-6">
+        <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center">
           {/* Search */}
-          <div className="flex-1 min-w-64">
+          <div className="flex-1 min-w-0">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
               <input
                 type="text"
                 placeholder="Search reports..."
                 value={filters.search}
                 onChange={(e) => handleFilterChange("search", e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-8 sm:pl-10 pr-4 py-2 text-sm sm:text-base border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
           </div>
 
-          {/* Status Filter */}
-          <div className="flex items-center space-x-2">
-            <Filter className="h-5 w-5 text-gray-400" />
-            <select
-              value={filters.status}
-              onChange={(e) => handleFilterChange("status", e.target.value)}
-              className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="all">All Status</option>
-              <option value="pending">Pending</option>
-              <option value="investigating">Investigating</option>
-              <option value="resolved">Resolved</option>
-            </select>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            {/* Status Filter */}
+            <div className="flex items-center space-x-2">
+              <Filter className="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
+              <select
+                value={filters.status}
+                onChange={(e) => handleFilterChange("status", e.target.value)}
+                className="border border-gray-300 rounded-md px-3 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="all">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="investigating">Investigating</option>
+                <option value="resolved">Resolved</option>
+              </select>
+            </div>
+
+            {/* Priority Filter */}
+            <div>
+              <select
+                value={filters.priority}
+                onChange={(e) => handleFilterChange("priority", e.target.value)}
+                className="border border-gray-300 rounded-md px-3 py-2 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="all">All Priority</option>
+                <option value="high">High Priority</option>
+                <option value="medium">Medium Priority</option>
+                <option value="low">Low Priority</option>
+              </select>
+            </div>
           </div>
 
-          {/* Priority Filter */}
-          <div>
-            <select
-              value={filters.priority}
-              onChange={(e) => handleFilterChange("priority", e.target.value)}
-              className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            >
-              <option value="all">All Priority</option>
-              <option value="high">High Priority</option>
-              <option value="medium">Medium Priority</option>
-              <option value="low">Low Priority</option>
-            </select>
-          </div>
-
-          <div className="text-sm text-gray-600">
+          <div className="text-xs sm:text-sm text-gray-600 text-center sm:text-left">
             Showing {filteredReports.length} of {reports.length} reports
           </div>
         </div>
@@ -176,7 +178,7 @@ const AllReports = () => {
       {/* Reports List */}
       <div className="space-y-4">
         {filteredReports.length === 0 ? (
-          <div className="bg-white rounded-lg shadow-md p-8 text-center">
+          <div className="bg-white rounded-lg shadow-md p-6 sm:p-8 text-center">
             <Eye className="h-16 w-16 text-gray-400 mx-auto mb-4" />
             <h3 className="text-lg font-medium text-gray-900 mb-2">
               No reports found
@@ -193,21 +195,21 @@ const AllReports = () => {
           filteredReports.map((report) => (
             <div
               key={report.id}
-              className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow"
+              className="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow"
             >
-              <div className="flex justify-between items-start mb-4">
+              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4">
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                     {report.title}
                   </h3>
                   {report.description && (
-                    <p className="text-gray-600 mb-3">{report.description}</p>
+                    <p className="text-sm sm:text-base text-gray-600 mb-3">{report.description}</p>
                   )}
 
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                  <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm text-gray-500">
                     {report.location && (
                       <div className="flex items-center space-x-1">
-                        <MapPin className="h-4 w-4" />
+                        <MapPin className="h-3 w-3 sm:h-4 sm:w-4" />
                         <span>
                           {report.location.latitude.toFixed(4)},{" "}
                           {report.location.longitude.toFixed(4)}
@@ -216,7 +218,7 @@ const AllReports = () => {
                     )}
 
                     <div className="flex items-center space-x-1">
-                      <Calendar className="h-4 w-4" />
+                      <Calendar className="h-3 w-3 sm:h-4 sm:w-4" />
                       <span>{formatDate(report.timestamp)}</span>
                     </div>
 
@@ -226,17 +228,17 @@ const AllReports = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-end space-y-2 ml-4">
-                  <div className="flex space-x-2">
+                <div className="flex flex-col sm:items-end space-y-2 mt-4 sm:mt-0 sm:ml-4">
+                  <div className="flex flex-wrap gap-2">
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium border ${getPriorityColor(
+                      className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium border ${getPriorityColor(
                         report.priority
                       )}`}
                     >
                       {report.priority} priority
                     </span>
                     <span
-                      className={`px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(
+                      className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium border ${getStatusColor(
                         report.status
                       )}`}
                     >

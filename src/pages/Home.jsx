@@ -194,7 +194,7 @@ const Home = () => {
             <span className="text-lg font-semibold">Sagar Suraksha</span>
           </div>
           <p className="text-gray-400">
-            Smart India Hackathon 2024 - Integrated Platform for Ocean Safety
+            Smart India Hackathon 2025 - Integrated Platform for Ocean Safety
           </p>
         </div>
       </footer>

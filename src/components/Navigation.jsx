@@ -44,7 +44,30 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-2">
-            <Shield className="h-8 w-8" />
+            <svg
+              className="h-8 w-8"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 13c0 5-3.5 7.5-8 10-4.5-2.5-8-5-8-10V6l8-3 8 3v7Z" />
+              <path
+                d="M8 12 Q10 10 12 12 T16 12"
+                stroke="white"
+                strokeWidth="1.5"
+                fill="none"
+              />
+              <path
+                d="M8 15 Q10 13 12 15 T16 15"
+                stroke="white"
+                strokeWidth="1.5"
+                fill="none"
+              />
+            </svg>
             <h1 className="text-xl font-bold">Sagar Suraksha</h1>
           </div>
 

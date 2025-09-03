@@ -90,7 +90,32 @@ const Home = () => {
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <Shield className="h-20 w-20 text-blue-600 mx-auto mb-6" />
+          <div className="mx-auto mb-6">
+            <svg
+              className="h-20 w-20 mx-auto"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#2563eb"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 13c0 5-3.5 7.5-8 10-4.5-2.5-8-5-8-10V6l8-3 8 3v7Z" />
+              <path
+                d="M8 12 Q10 10 12 12 T16 12"
+                stroke="#2563eb"
+                strokeWidth="1.5"
+                fill="none"
+              />
+              <path
+                d="M8 15 Q10 13 12 15 T16 15"
+                stroke="#2563eb"
+                strokeWidth="1.5"
+                fill="none"
+              />
+            </svg>
+          </div>
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
             Sagar Suraksha
           </h1>
@@ -179,7 +204,30 @@ const Home = () => {
               to="/login"
               className="inline-flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors"
             >
-              <Shield className="h-5 w-5" />
+              <svg
+                className="h-5 w-5"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 13c0 5-3.5 7.5-8 10-4.5-2.5-8-5-8-10V6l8-3 8 3v7Z" />
+                <path
+                  d="M8 12 Q10 10 12 12 T16 12"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+                <path
+                  d="M8 15 Q10 13 12 15 T16 15"
+                  stroke="white"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+              </svg>
               <span>Start Reporting Today</span>
             </Link>
           )}
@@ -190,7 +238,30 @@ const Home = () => {
       <footer className="bg-gray-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <Shield className="h-6 w-6" />
+            <svg
+              className="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="white"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 13c0 5-3.5 7.5-8 10-4.5-2.5-8-5-8-10V6l8-3 8 3v7Z" />
+              <path
+                d="M8 12 Q10 10 12 12 T16 12"
+                stroke="white"
+                strokeWidth="1.5"
+                fill="none"
+              />
+              <path
+                d="M8 15 Q10 13 12 15 T16 15"
+                stroke="white"
+                strokeWidth="1.5"
+                fill="none"
+              />
+            </svg>
             <span className="text-lg font-semibold">Sagar Suraksha</span>
           </div>
           <p className="text-gray-400">
